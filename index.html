@@ -8,13 +8,12 @@
 <html>
 	
 	
-
-
+	
 	
 <style>
 	
 @font-face {
-	font-family: myVF;
+	font-family: VodafoneRegular;
 	src: url('https://marcodagolini.github.io/vfalbania2/Fonts/VFreg.ttf');
 	src: url('https://marcodagolini.github.io/vfalbania2/Fonts/VFreg.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
 		 url('https://marcodagolini.github.io/vfalbania2/Fonts/VFreg.ttf')  format('truetype'), /* Safari, Android, iOS */
@@ -36,7 +35,7 @@
     margin-left: 60px;
     font-size: 12.5px;
     color: #4a4d4e;
-    font-family: myVF;
+    font-family: VodafoneRegular,Arial;
   }
   .header_text_lp {
     float: left;
@@ -60,7 +59,7 @@
     bottom: 5px;
     left: 10px;
     margin: 20px 20px;
-    font-family: myVF;
+    font-family: VodafoneRegular,Arial;
     width: 289px;
   }
   .startChat_lp:hover {
@@ -75,7 +74,7 @@
   }
 
   .showContainer_lp {
-    background: url(https://www.vodafone.al/ext_files/TOBi/icon_shadow.png)
+    background: url(https://www.vodafone.al/ext_files/TOBi/Tobi_icon_start.png)
       no-repeat;
     background-size: cover;
     width: 100px;
@@ -107,7 +106,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border: 1px transparent;
     border-radius: 10px;
-    font-family: myVF;
+    font-family: VodafoneRegular,Arial;
   }
 
   .header_disclaimer_lp {
@@ -141,6 +140,9 @@
 	
 	window.lpTag=window.lpTag||{},'undefined'==typeof window.lpTag._tagCount?(window.lpTag={wl:lpTag.wl||null,scp:lpTag.scp||null,site:'75070639'||'',section:lpTag.section||'',tagletSection:lpTag.tagletSection||null,autoStart:lpTag.autoStart!==!1,ovr:lpTag.ovr||{},_v:'1.10.0',_tagCount:1,protocol:'https:',events:{bind:function(t,e,i){lpTag.defer(function(){lpTag.events.bind(t,e,i)},0)},trigger:function(t,e,i){lpTag.defer(function(){lpTag.events.trigger(t,e,i)},1)}},defer:function(t,e){0===e?(this._defB=this._defB||[],this._defB.push(t)):1===e?(this._defT=this._defT||[],this._defT.push(t)):(this._defL=this._defL||[],this._defL.push(t))},load:function(t,e,i){var n=this;setTimeout(function(){n._load(t,e,i)},0)},_load:function(t,e,i){var n=t;t||(n=this.protocol+'//'+(this.ovr&&this.ovr.domain?this.ovr.domain:'lptag.liveperson.net')+'/tag/tag.js?site='+this.site);var o=document.createElement('script');o.setAttribute('charset',e?e:'UTF-8'),i&&o.setAttribute('id',i),o.setAttribute('src',n),document.getElementsByTagName('head').item(0).appendChild(o)},init:function(){this._timing=this._timing||{},this._timing.start=(new Date).getTime();var t=this;window.attachEvent?window.attachEvent('onload',function(){t._domReady('domReady')}):(window.addEventListener('DOMContentLoaded',function(){t._domReady('contReady')},!1),window.addEventListener('load',function(){t._domReady('domReady')},!1)),'undefined'===typeof window._lptStop&&this.load()},start:function(){this.autoStart=!0},_domReady:function(t){this.isDom||(this.isDom=!0,this.events.trigger('LPT','DOM_READY',{t:t})),this._timing[t]=(new Date).getTime()},vars:lpTag.vars||[],dbs:lpTag.dbs||[],ctn:lpTag.ctn||[],sdes:lpTag.sdes||[],hooks:lpTag.hooks||[],identities:lpTag.identities||[],ev:lpTag.ev||[]},lpTag.init()):window.lpTag._tagCount+=1;
 
+
+	
+	
       function adjust(data, eventInfo) {
         jQuery(".lp_floating").css("opacity", 1);
 
@@ -164,7 +166,6 @@
 
       function offeredOrNot() {
 	      
-
 	      
 	      if(window.innerWidth > 1025){
 		      jQuery('.LPMcontainer').css('z-index', 100)
@@ -179,9 +180,7 @@
 			      jQuery(".engagement_lp").css("bottom", "74px");
 		      }
 	      }
-	      
-
-	      
+	      	      
 	      jQuery(window).resize(function() {
 		      if(window.innerWidth > 1025){
 			      jQuery('.LPMcontainer').css('z-index', 100)
@@ -234,6 +233,7 @@
 		}
         });
       }
+	
 
       lpTag.events.bind({
         eventName: "state",
@@ -241,6 +241,7 @@
         func: adjust,
         triggerOnce: false,
       });
+	
 
       lpTag.events.bind({
         eventName: "OFFER_IMPRESSION",
@@ -265,333 +266,273 @@
       function addLanguage() {
         lpTag.unifiedWindow.addLanguage(
           {
-            chattingWith: "{{agent_name}}",
-            connecting: "Duke u lidhur",
-            message_us: "Na shkruaj",
-            ended: "Faleminderit",
-            loader_title: "Në ngarkim",
-            chatting: "Chat",
-            preChat: "Chat me ne",
-            preSms: "Na shkruaj",
-            postChat: "Faleminderit",
-            offline: "Na kontakto",
-            endedAndTranscriptShown: "Chat transkript",
-            closeWindowAreYouSureMsg: "Nëse mbyllet, biseda do të përfundojë",
-            closeWindowOkBtn: "OK",
-            closeWindowCancelBtn: "Fshij",
-            closeChatAreYouSureMsg: "Je i sigurtë që dëshiron të shkëputesh?",
-            closeChatDisconnectBtn: "Shkëput",
-            closeChatCancelBtn: "Fshij",
-            tooltip_NewMessageNotification:
-              "Ti ke {{notificationCount}} {{notificationMsg}} të reja",
-            tooltip_EmailTranscriptSentConfirmation:
-              "Transkripti do të dërgohet pas përfundimit të bisedës",
-            tooltip_Message: "mesazh",
-            tooltip_Messages: "mesazhe",
-            tooltip_Close: "Mbyll",
-            tooltip_Download:
-              "You may be required to allow pop-ups to download files",
-            tooltip_ExpandActionMenu: "Hap menu",
-            tooltip_CollapseActionMenu: "Mbyll menu",
-            tooltip_SendIcon: "Dërgo",
-            tooltip_SendIconDisabled: "Ti nuk je i lidhur në bisedë",
-            tooltip_Minimize: "Zvogëlo",
-            tooltip_Maximize: "Zmadho",
-            tooltip_MuteButton: "Mute",
-            tooltip_UnmuteButton: "Unmute",
-            tooltip_Print: "Print transkript",
-            tooltip_Email: "Email transkript",
-            tooltip_EndChat: "Përfundo bisedën",
-            tooltip_Popout: "Pop out",
-            tooltip_Popin: "Pop in",
-            tooltip_Lock: "Ky është një chat i sigurtë",
-            tooltip_Loader: "Në ngarkim",
-            tooltip_EmailClearField: "Pastro",
-            tooltip_AutoBlockCreditCardPatternsMessage:
-              "We have blocked some of your personal details from displaying.  Please do not share personal or sensitive information during the conversation.",
-            tooltip_open_widgets: "Open widgets",
-            tooltip_close_widgets: "Close widgets",
-            tooltip_refresh_slider: "Refresh widget",
-            tooltip_minimize_slider: "Minimize widget",
-            tooltip_maximize_slider: "Maximize widget",
-            tooltip_ConnectionIssue: "Lidhja e pastabilizuar",
-            tooltip_ConnectionReEstablished: "Lidhja u stabilizua",
-            tooltip_CloseToStartChat:
-              "To start a chat please close this window",
-            tooltip_CloseToStartConversation:
-              "To start a messaging conversation please close this window",
-            tooltip_FileTypeValidation: "File type should be PNG, JPG or GIF",
-            tooltip_FileTypeValidationExpanded:
-              "File type should be PNG, JPG, GIF, PDF, DOCX, XLSX or PPTX",
-            tooltip_FileSizeValidation: "File size should be 5 MB or less",
-            tooltip_FileSizeValidation15: "File size should be 15 MB or less",
-            tooltip_EmojiIcon: "Zgjidh Emoji",
-            windowTitle: "Të duhet ndihmë?",
-            defaultTextBoxText: "Shkruaj këtu",
-            welcomeMessage: "Si mund t'ju ndihmojmë?",
-            thankYouMessage: "Faleminderit që na shkruajte",
-            thankYouMessagePreSms:
-              "Text conversation started with {{phoneNumber}}. A representative should text you soon.",
-            visitorChatLineSentError: "Error sending message",
-            dragFilesMessage: "Drag files here",
-            dropFilesMessage: "Drop files here",
-            at: "në",
-            me: "Unë",
-            you: "Ti",
-            info: "Info",
-            agent: "Agjent",
-            authExpired:
-              "Your verification has expired. You are being directed to re-login. Please press here in order to redirect immediately.",
-            unauthExpired:
-              "Your verification has expired. Click below to reload the conversation.",
-            reload: "Reload",
-            redirect: "Redirect",
-            relogin: "Sesioni përfundoi",
-            secureForm_line_send:
-              "{{agentName}} has sent you a Secure Form: {{secureFormName}}",
-            secureForm_link_title_send:
-              "{{agentName}} has sent you a Secure Form",
-            secureForm_line_submit:
-              "The following Secure Form has been submitted: {{secureFormName}}",
-            secureForm_link_title_submit:
-              "The following Secure Form has been submitted",
-            secureFormSubmittedMessage:
-              "The form has been submitted successfully. <br>To protect your information, submitted forms cannot be reopened.",
-            secureFormOpenedInAnotherTabMessage:
-              "The Secure Form could not be opened. Please submit the Secure Form from the tab where the interaction began.",
-            secureFormErrorMessage:
-              "The Secure Form could not be opened. <br>Please contact your agent for assistance.",
-            monthJanuary: "Janar",
-            monthFebruary: "Shkurt",
-            monthMarch: "Mars",
-            monthApril: "Prill",
-            monthMay: "Maj",
-            monthJune: "Qershor",
-            monthJuly: "Korrik",
-            monthAugust: "Gusht",
-            monthSeptember: "Shtator",
-            monthOctober: "Tetor",
-            monthNovember: "Nëntor",
-            monthDecember: "Dhjetor",
-            weekDaySunday: "E dielë",
-            weekDayMonday: "E hënë",
-            weekDayTuesday: "E martë",
-            weekDayWednesday: "E mërkure",
-            weekDayThursday: "E enjte",
-            weekDayFriday: "E premte",
-            weekDaySaturday: "E shtunë",
-            daySuffix: "",
-            dayMonthGap: " ",
-            logoAltText: "Logo",
-            agentPicAltText: "Agent picture",
-            lpLogo: "LivePerson logo",
-            errorIconAltText: "Error",
-            dialog_email_transcript: "Send transcript to:",
-            EmailTranscriptAction: "Email\ntranscript",
-            inputEmailError:
-              "Enter a valid email address. Format: you@domain.com",
-            defaultEmailInputText: "Enter email*",
-            transcriptSubject: "Your chat transcript",
-            transcriptAreaLabel: "Chat messages",
-            transcriptConvResolvedByAgent:
-              "Biseda u mbyll nga agjenti {{time}}",
-            transcriptConvResolvedByVisitor: "Biseda u mbyll nga ti {{time}}",
-            transcriptTtrMessage: "Ne do të përgjigjemi në {{time}}",
-            transcriptShortlyMessage: "Një agjent do të të përgjigjet shpejt",
-            transcriptTtrOffHoursMessage:
-              "Jemi jashtë orarit të punës. Ne do të përgjigjemi në {{time}}",
-            transcriptForPhotoSharingImage: "Shared content is not available",
-            transcriptRotatorDefaultMessage: "Duke ngarkuar historinë",
-            transcriptRotatorFirstMessage: "Në ngarkim",
-            transcriptRotatorSecondMessage: "Failed to load history. ",
-            transcriptRotatorLinkText: "Retry",
-            idnvDialogTitle:
-              "Please enter characters {{idnvChar1}} and {{idnvChar2}} from your {{idnvType}}",
-            idnvInputError: "Complete both required fields",
-            idnvFormCancelled: "The identification form was not submitted",
-            idnvFormSubmitted:
-              "You have submitted characters {{idnvChar1}} and {{idnvChar2}} from your {{idnvType}}.",
-            idnvAnswer: "Characters are {{idnvAnswer1}} and {{idnvAnswer2}}",
-            idnvSendLineError: "Identification form could not be submitted",
-            MuteSoundAction: "Mute",
-            UnmuteSoundAction: "Unmute",
-            PrintTranscriptAction: "Print\ntranscript",
-            MarkUrgentAction: "Mark as urgent",
-            DismissUrgentAction: "Dismiss urgent",
-            EndChatAction: "End\nconversation",
-            PopOutAction: "Pop out",
-            PopInAction: "Pop in",
-            PopOutAction_topbar: "Click to pop out",
-            PopInAction_topbar: "Click to pop in",
-            ForgetMeAction: "Clear history",
-            SharePhotoAction: "Send\nimage",
-            AddAttachmentAction: "Add\nattachment",
-            error: "Error",
-            couldNotConnect: "Oops - unable to connect",
-            tryAgain: "Try again",
-            loadingOnMinimize: "Loading",
-            loading: "Loading",
-            unableToConnect: "Unable to connect",
-            reconnect: "Trying to reconnect",
-            chatEndedOnExternalWindow:
-              "Close window in order to start new chat",
-            externalWindowOpen:
-              "You have an ongoing chat. Return to that window to continue the chat.",
-            unsupportedBrowserMode:
-              "Your browser may be in incognito mode, or it may be blocking third party cookies. Please open a regular browser session to chat, or check your browser privacy settings",
-            cannotResumeChat:
-              "Resume chat from the tab where the interaction began",
-            crossDomainError:
-              "Cannot resume conversation, please return to previous page to continue.",
-            chatAuthError:
-              "Go back to the previous page or log in to continue your conversation.",
-            confirmMessage:
-              "Closing the conversation means that you won’t be able to continue even if you go back or log in. Are you sure you want to proceed?",
-            startConversationError:
-              "Please refresh the page and start a new conversation.",
-            connectionUnavailable: "Connection unavailable",
-            sessionExpired: "Session expired",
-            sessionError:
-              "Your session has expired. Please close this window and start a new conversation in order to resume.",
-            sharkSessionExpired:
-              "Please refresh the page and start a new conversation.",
-            agentIsTypingText: "Agjenti po shkruan...",
-            forget_me_dialog:
-              "Are you sure you want to clear your conversation history?",
-            forget_me_dialog_subtitle_on_active_chat:
-              "If you choose “yes” the conversation will end and your conversation history will no longer be available from this device.",
-            forget_me_dialog_subtitle:
-              "If you choose “yes” your conversation history will no longer be available from this device",
-            forget_me_dialog_close_window:
-              "Are you sure you want to clear your conversation history?",
-            forget_me_dialog_subtitle_on_active_chat_close_window:
-              'If you choose "Yes" the conversation will be closed automatically and your history will no longer be available when you reopen the window.',
-            forget_me_dialog_subtitle_close_window:
-              'If you choose "Yes" the conversation will be closed automatically and your history will no longer be available when you reopen the window.',
-            end_chat_alert: "Dëshiron të përfundosh bisedën?",
-            yes: "Po",
-            no: "Jo",
-            preChatButton: "Dërgo",
-            surveyRequireField: "Complete the required field",
-            surveyRequireOption: "Required field. Select an option.",
-            surveyRequireCheckbox:
-              "Required field. Select at least one option.",
-            surveyRequireNumericField: "Only numbers can be used in this field",
-            surveyRequireValidEmail:
-              "Enter a valid email address. Format: you@domain.com",
-            surveyRequireValidPhone: "Enter a valid phone number.",
-            surveyMaximumChars:
-              "Cannot include more than {{specify_number}} characters in this field",
-            surveyIllilgalCharacters:
-              "One or more of the characters entered are not valid. Do not use: &lt;, &gt;, &quot;",
-            surveyGeneralError:
-              "An error has been encountered. Please review the survey and resubmit.",
-            surveyLabel: "Complete the survey",
-            offlineButton: "Dërgo",
-            exitButton: "Dërgo",
-            defaultSelect: "Choose item from the list",
-            defaultTextArea: "Shkruaj këtu",
-            submit: "Dërgo",
-            back: "Prapa",
-            next: "Përpara",
-            startChat: "Chat",
-            closeWindowText: "You have an active engagement",
-            cancel: "Fshij",
-            ok: "OK",
-            close: "Mbyll",
-            send: "Dërgo",
-            insertTextHere: "Shkruaj këtu",
-            IN_SESSION: "Resume chat from the tab where the interaction began",
-            IN_PRE_CHAT: "Return to the tab with the survey to start chat",
-            IN_CHAT: "Please refresh the page to resume chat",
-            captchaTitle: "Na shkruaj",
-            captchaEnterText: "Type the text shown",
-            captchaRefreshButton: "Try another text",
-            captchaAudioButton: "Try audio",
-            captchaTextButton: "Try text",
-            captchaMessageError: "Verification failed. Please try again.",
-            captchaAccessDenied: "Maximum number of tries exceeded",
-            messagingState_PENDING: "Pezull",
-            messagingState_SENT: "Dërguar",
-            messagingState_ACCEPT: "Pranuar",
-            messagingState_READ: "Lexuar",
-            messagingState_ERROR: "I pa pranuar",
-            messagingState_image_ERROR:
-              "This file failed to upload.<br>Please try another file.",
-            messagingState_image_RETRY:
-              "This file failed to upload.<br>Please try again.",
-            csatLevel_0: "",
-            csatLevel_1: "Shumë i/e pakënaqur",
-            csatLevel_2: "I/E pakënaqur",
-            csatLevel_3: "Neutral",
-            csatLevel_4: "I/E kënaqur",
-            csatLevel_5: "Shumë i/e kënaqur",
-            outOf: "out of",
-            csatTheAgent: "Agjenti",
-            csatRatingQuestion:
-              "Si do e vlerësoje bisedën e zhvilluar me agjentin?",
-            csatDisclaimer: "Vlerësimi yt na ndihmon të përmirësohemi",
-            cobrowseInvitation:
-              "Po të ftoj për ndarë së bashku ekranin, në mënyrë që të të ndihmoj më mirë. Për të filluar, të lutem, kliko Pranoj.",
-            cobrowseAcceptBtn: "Pranoj",
-            cobrowseRejectBtn: "Refuzoj",
-            cobrowseInvitationHeading: "Ftesë për të ndarë ekranin",
-            cobrowseSessionStarting: "Duke filluar sesionin e përbashkët...",
-            cobrowseInvitationRejected: "Ftesa u refuzua",
-            cobrowseLine_cobrowseAccepted: "Ftesa u pranua",
-            cobrowseLine_cobrowseDeclined: "Ftesa u refuzua",
-            cobrowseLine_cobrowseTimeout: "Ftesa e marrë skadoi",
-            cobrowseLine_cobrowseOffered:
-              "{{agentName}} të ka ftuar në një sesion për të ndarë ekranin",
-            cobrowseLine_cobrowseCanceled: "Ftesa u anullua nga {{agentName}}",
-            video_cobrowseInvitation:
-              "I have invited you to a video call. To start, please click Accept.",
-            video_cobrowseConnecting: "Duke u lidhur",
-            video_cobrowseConnectingPermission:
-              "Camera and microphone access are required. Please accept these permissions when prompted by your browser.",
-            video_cobrowseAcceptBtn: "Prano",
-            video_cobrowseRejectBtn: "Refuzo",
-            video_cobrowseInvitationHeading: "Video Call",
-            video_cobrowseSessionStarting: "Starting a Call...",
-            video_cobrowseInvitationRejected: "Call has been rejected",
-            video_cobrowseLine_cobrowseAccepted: "Call accepted",
-            video_cobrowseLine_cobrowseDeclined: "Call rejected",
-            video_cobrowseLine_cobrowseTimeout:
-              "You missed a call from {{agentName}}",
-            video_cobrowseLine_cobrowseOffered: "{{agentName}} has called you",
-            video_cobrowseLine_cobrowseCanceled:
-              "Call was cancelled by {{agentName}}",
-            voice_cobrowseInvitation:
-              "I have invited you to a voice call. To start, please click Accept.",
-            voice_cobrowseConnecting: "Connecting",
-            voice_cobrowseConnectingPermission:
-              "Microphone access is required. Please accept this permission when prompted by your browser.",
-            voice_cobrowseAcceptBtn: "Accept",
-            voice_cobrowseRejectBtn: "Reject",
-            voice_cobrowseInvitationHeading: "Voice Call",
-            voice_cobrowseSessionStarting: "Starting a Call...",
-            voice_cobrowseInvitationRejected: "Call has been rejected",
-            voice_cobrowseLine_cobrowseAccepted: "Call accepted",
-            voice_cobrowseLine_cobrowseDeclined: "Call rejected",
-            voice_cobrowseLine_cobrowseTimeout:
-              "You missed a call from {{agentName}}",
-            voice_cobrowseLine_cobrowseOffered: "{{agentName}} has called you",
-            voice_cobrowseLine_cobrowseCanceled:
-              "Call was cancelled by {{agentName}}",
-            voice_cobrowseActiveCallTooltip: "You are in a voice call",
-            richContentSent: "<< Sent Rich Content >>",
-            browserNotifications_newMessageTitle:
-              "Mesazh i ri nga {{agentName}}",
-            browserNotifications_newMessages: "mesazhe të reja",
-            browserNotifications_richContent:
-              "{{agentName}} has shared rich content with you",
-            browserNotifications_image:
-              "{{agentName}} has shared an image with you",
-            browserNotifications_file:
-              "{{agentName}} has shared a file with you",
-            ts_Now: "Tani",
-            ts_Today: "Sot",
-            ts_Yesterday: "Dje",
+            		 chattingWith: "{{agent_name}}",
+			 connecting: "Duke u lidhur",
+			 message_us: "Na shkruaj",
+			 ended: "Faleminderit",
+			 loader_title: "Në ngarkim",
+			 chatting: "Chat",
+			 preChat: "Chat me ne",
+			 preSms: "Na shkruaj",
+			 postChat: "Faleminderit",
+			 offline: "Na kontakto",
+			 endedAndTranscriptShown: "Chat transkript",
+			 closeWindowAreYouSureMsg: "Nëse mbyllet, biseda do të përfundojë",
+			 closeWindowOkBtn: "OK",
+			 closeWindowCancelBtn: "Fshij",
+			 closeChatAreYouSureMsg: "Je i sigurtë që dëshiron të shkëputesh?",
+			 closeChatDisconnectBtn: "Shkëput",
+			 closeChatCancelBtn: "Fshij",
+			 tooltip_NewMessageNotification: "Ti ke {{notificationCount}} {{notificationMsg}} të reja",
+			 tooltip_EmailTranscriptSentConfirmation: "Transkripti do të dërgohet pas përfundimit të bisedës",
+			 tooltip_Message: "Mesazh",
+			 tooltip_Messages: "Mesazhe",
+			 tooltip_Close: "Mbyll",
+			 tooltip_Download: "Mund të të kërkohet të lejosh pop-up për të shkarkuar skedarë",
+			 tooltip_ExpandActionMenu: "Hap menu",
+			 tooltip_CollapseActionMenu: "Mbyll menu",
+			 tooltip_SendIcon: "Dërgo",
+			 tooltip_SendIconDisabled: "Ti nuk je i lidhur në bisedë",
+			 tooltip_Minimize: "Zvogëlo",
+			 tooltip_Maximize: "Zmadho",
+			 tooltip_MuteButton: "Pa zë",
+			 tooltip_UnmuteButton: "Me zë",
+			 tooltip_Print: "Printo transkriptin",
+			 tooltip_Email: "Email transkriptin",
+			 tooltip_EndChat: "Përfundo bisedën",
+			 tooltip_Popout: "Pop out",
+			 tooltip_Popin: "Pop in",
+			 tooltip_Lock: "Ky është një chat i sigurtë",
+			 tooltip_Loader: "Në ngarkim",
+			 tooltip_EmailClearField: "Pastro",
+			 tooltip_AutoBlockCreditCardPatternsMessage: "Ne kemi bllokuar shfaqjen e disa prej detajeve të tua personale. Të lutemi, mos ndaj informacion personal apo sensitiv përgjatë bisedës",
+			 tooltip_open_widgets: "Hap widget",
+			 tooltip_close_widgets: "Mbyll widget",
+			 tooltip_refresh_slider: "Rifresko widget",
+			 tooltip_minimize_slider: "Zvogëlo widget",
+			 tooltip_maximize_slider: "Zmadho widget",
+			 tooltip_ConnectionIssue: "Lidhja e pastabilizuar",
+			 tooltip_ConnectionReEstablished: "Lidhja u stabilizua",
+			 tooltip_CloseToStartChat: "Për të nisur një chat, të lutem, mbyll këtë dritare",
+			 tooltip_CloseToStartConversation: "Për të nisur një bisedë me mesazhe, të lutem, mbyll këtë dritare",
+			 tooltip_FileTypeValidation: "Lloji i skedarit duhet të jetë PNG, JPG ose GIF",
+			 tooltip_FileTypeValidationExpanded: "Lloji i skedarit duhet të jetë PNG, JPG, PDF, DOCX, XLSX ose PPTX",
+			 tooltip_FileSizeValidation: "Formati i skedarit duhet të jetë 5 MB ose më pak",
+			 tooltip_FileSizeValidation15: "Formati i skedarit duhet të jetë 15 MB ose më pak",
+			 tooltip_EmojiIcon: "Zgjidh Emoji",
+			 windowTitle: "Të duhet ndihmë?",
+			 defaultTextBoxText: "Shkruaj këtu",
+			 welcomeMessage: "Si mund t'ju ndihmojmë?",
+			 thankYouMessage: "Faleminderit që na shkruajte",
+			 thankYouMessagePreSms: "Biseda me shkrim filloi me {{phoneNumber}}. Një agjent do të të shkruajë shpejt. ", 
+			 visitorChatLineSentError: "Error në dërgimin e mesazhit",
+			 dragFilesMessage: "Tërhiq skedarët këtu",
+			 dropFilesMessage: "Lësho skedarët këtu",
+			 at: "në",
+			 me: "Unë",
+			 you: "Ti",
+			 info: "Info",
+			 agent: "Agjent",
+			 authExpired: "Verifikimi yt ka skaduar. Po drejtohesh për t'u identifikuar sërish. Të lutemi, kliko këtu që të ridretohesh menjëherë.",
+			 unauthExpired: "Verifikimi yt ka skaduar. Kliko më poshtë për të ringarkuar bisedën.",
+			 reload: "Ringarko",
+			 redirect: "Ridrejto",
+			 relogin: "Sesioni përfundoi",
+			 secureForm_line_send: "{{agentName}} të ka dërguar një Formë të sigurtë: {{secureFormName}}",
+			 secureForm_link_title_send: "{{agentName}} të ka dërguar një Formë të sigurtë",
+			 secureForm_line_submit: " Forma e sigurtë u paraqit ",
+			 secureForm_link_title_submit: "Forma e sigurtë nuk u paraqit",
+			 secureFormSubmittedMessage: "Për të mbrojtur informacionin tënd, format e ngarkuara nuk mund të hapen sërish.",
+			 secureFormOpenedInAnotherTabMessage: "Forma e sigurtë nuk mund të hapet. Të lutemi, paraqit Formën e sigurtë nga dritarja ku filloi bashkëveprimi.",
+			 secureFormErrorMessage: "Forma e sigurtë nuk mund të hapet. Të lutemi, kontakto me agjentin për ndihmë.",
+			 monthJanuary: "Janar",
+			 monthFebruary: "Shkurt",
+			 monthMarch: "Mars",
+			 monthApril: "Prill",
+			 monthMay: "Maj",
+			 monthJune: "Qershor",
+			 monthJuly: "Korrik",
+			 monthAugust: "Gusht",
+			 monthSeptember: "Shtator",
+			 monthOctober: "Tetor",
+			 monthNovember: "Nëntor",
+			 monthDecember: "Dhjetor",
+			 weekDaySunday: "E dielë",
+			 weekDayMonday: "E hënë",
+			 weekDayTuesday: "E martë",
+			 weekDayWednesday: "E mërkure",
+			 weekDayThursday: "E enjte",
+			 weekDayFriday: "E premte",
+			 weekDaySaturday: "E shtunë",
+			 daySuffix: "",
+			 dayMonthGap: " ",
+			 logoAltText: "Logo",
+			 agentPicAltText: "Fotografia e agjentit",
+			 lpLogo: "LivePerson logo",
+			 errorIconAltText: "Error",
+			 dialog_email_transcript: "Dërgo transkriptin tek:",
+			 EmailTranscriptAction: "Email transkriptin",
+			 inputEmailError: "Shkruaj nje adresë emaili të vlefshme. Formati: ti@domain.com",
+			 defaultEmailInputText: "Shkruaj emailin*",
+			 transcriptSubject: "Transkripti i chatit tënd",
+			 transcriptAreaLabel: "Mesazhet e chatit",
+			 transcriptConvResolvedByAgent: "Biseda u mbyll nga agjenti {{time}}",
+			 transcriptConvResolvedByVisitor: "Biseda u mbyll nga ti {{time}}",
+			 transcriptTtrMessage: "Ne do të përgjigjemi në {{time}}",
+			 transcriptShortlyMessage: "Një agjent do të të përgjigjet shpejt",
+			 transcriptTtrOffHoursMessage: "Jemi jashtë orarit të punës. Ne do të përgjigjemi në {{time}}",
+			 transcriptForPhotoSharingImage: "Përmbajtja e ndarë nuk është e vlefshme",
+			 transcriptRotatorDefaultMessage: "Duke ngarkuar historinë",
+			 transcriptRotatorFirstMessage: "Në ngarkim",
+			 transcriptRotatorSecondMessage: "Historiku nuk u ngarkua ",
+			 transcriptRotatorLinkText: "Provo përsëri",
+			 idnvDialogTitle: "Të lutemi, plotëso karakteret {{idnvChar1}} dhe {{idnvChar2}} nga {{idnvType}}",
+			 idnvInputError: "Plotëso të dyja fushat e kërkuara",
+			 idnvFormCancelled: "Forma e identifikimit nuk u paraqit",
+			 idnvFormSubmitted: "Ti ke paraqitur karaktere {{idnvChar1}} dhe {{idnvChar2}} nga {{idnvType}}",
+			 idnvAnswer: "Karakteret janë {{idnvAnswer1}} dhe {{idnvAnswer2}}",
+			 idnvSendLineError: "Forma e identifikimit nuk u paraqit",
+			 MuteSoundAction: "Pa zë",
+			 UnmuteSoundAction: "Me zë",
+			 PrintTranscriptAction: "Printo transkriptin",
+			 MarkUrgentAction: "Shenjo si urgjent",
+			 DismissUrgentAction: "Ndërprit komandën Urgjent",
+			 EndChatAction: "Përfundo bisedën",
+			 PopOutAction: "Pop out",
+			 PopInAction: "Pop in",
+			 PopOutAction_topbar: "Kliko për pop out",
+			 PopInAction_topbar: "Kliko për pop in",
+			 ForgetMeAction: "Pastro historikun",
+			 SharePhotoAction: "Dërgo foto",
+			 AddAttachmentAction: "Shto bashkëngjitje",
+			 error: "Error",
+			 couldNotConnect: "Ups - lidhja nuk është e mundur",
+			 tryAgain: "Provo përsëri",
+			 loadingOnMinimize: "Në ngarkim të zvogëlimit",
+			 loading: "Në ngarkim",
+			 unableToConnect: "Lidhja nuk është e mundur",
+			 reconnect: "Duke u rilidhur",
+			 chatEndedOnExternalWindow: "Mbyll dritaren që të fillosh një chat të ri.",
+			 externalWindowOpen: "Ti ke një chat në vazhdim. Kthehu në atë dritare që të vijosh me chatin.",
+			 unsupportedBrowserMode: "Browseri yt mund të jetë incognito ose mund të jetë duke bllokuar cookie të palëve të treta. Të lutemi, hap një sesion browseri të rregullt për të chatuar ose verifiko cilësimet e privatësisë së browserit që po përdor. ",
+			 cannotResumeChat: "Rifillo chatin nga dritarja ku nisi bashkëveprimi",
+			 crossDomainError: "Chati nuk rifilloi, të lutemi, kthehu në faqen e mëparshme për të vazhduar",
+			 chatAuthError: "Kthehu në faqen e mëparshme ose identifiko profilin që të vazhdosh bisedën",
+			 confirmMessage: "Mbyllja e bisedës do të thotë se nuk do mund të vazhdosh më me të edhe nëse kthehesh pas ose identifikohesh. Doni të vazhdoni më tej?",
+			 startConversationError: "Të lutemi, rifresko faqen dhe fillo një bisedë të re.",
+			 connectionUnavailable: " Lidhja është e padisponueshme",
+			 sessionExpired: "Sesioni Skadoi",
+			 sessionError: "Sesioni yt skadoi. Të lutemi, mbyll këtë dritare dhe fillo një bisedë të re që të vazhdosh.",
+			 sharkSessionExpired: "Të lutemi, rifresko faqen dhe fillo një bisedë të re.",
+			 agentIsTypingText: "Agjenti po shkruan...",
+			 forget_me_dialog: "Je i sigurtë që dëshiron të fshish historikun e bisedës?",
+			 forget_me_dialog_subtitle_on_active_chat: "Nëse zgjedh 'Po', biseda do të përfundojë dhe historiku i bisedës nuk do të jetë më i disponueshëm nga kjo pajisje.",
+			 forget_me_dialog_subtitle: "Nëse zgjedh 'Po', historiku i bisedës nuk do të jetë i disponueshëm nga kjo pajisje.",
+			 forget_me_dialog_close_window: "Je i sigurtë që dëshiron të fshish historikun e bisedës?",
+			 forget_me_dialog_subtitle_on_active_chat_close_window: 'Nëse zgjedh "Po", biseda do të mbyllet automatikisht dhe historiku yt nuk do të jetë më i disponueshëm kur të hapësh sërish dritaren.',
+			 forget_me_dialog_subtitle_close_window: 'Nëse zgjedh "Po", biseda do të mbyllet automatikisht dhe historiku yt nuk do të jetë më i disponueshëm kur të hapësh sërish dritaren.',
+			 end_chat_alert: "Dëshiron të përfundosh bisedën?",
+			 yes: "Po",
+			 no: "Jo",
+			 preChatButton: "Dërgo",
+			 surveyRequireField: "Plotëso fushën e kërkuar",
+			 surveyRequireOption: "Fusha e kërkuar. Zgjidh një opsion.",
+			 surveyRequireCheckbox: "Fusha e kërkuar. Zgjidh të paktën një opsion.",
+			 surveyRequireNumericField: "Në këtë fushë mund të përdorësh vetëm numra",
+			 surveyRequireValidEmail: "Shkruaj një adresë emaili të vlefshme. Format: ti@domain.com",
+			 surveyRequireValidPhone: "Shkruaj nje numër telefoni të vlefshëm.",
+			 surveyMaximumChars: "Nuk mund të përfshish më shumë se {{specify_number}} karaktere në këtë fushë",
+			 surveyIllilgalCharacters: "Një ose më shumë karaktere nuk janë të vlefshme. Mos përdor: &lt;, &gt;, &quot;",
+			 surveyGeneralError: "është hasur një error. Të lutemi, rishiko sondazhin dhe pasqyro sërish.",
+			 surveyLabel: "Plotëso sondazhin",
+			 offlineButton: "Dërgo",
+			 exitButton: "Dërgo",
+			 defaultSelect: "Zgjidh elementin nga lista",
+			 defaultTextArea: "Shkruaj këtu",
+			 submit: "Dërgo",
+			 back: "Prapa",
+			 next: "Përpara",
+			 startChat: "Chat",
+			 closeWindowText: "Ti ke një bisedë aktive",
+			 cancel: "Fshij",
+			 ok: "OK",
+			 close: "Mbyll",
+			 send: "Dërgo",
+			 insertTextHere: "Shkruaj këtu",
+			 IN_SESSION: "Rifillo chatin nga tabela ku filloi bashkëveprimi ",
+			 IN_PRE_CHAT: "Kthehu tek dritarja me sondazhin për të filluar chatin",
+			 IN_CHAT: " Të lutemi, rifresko faqen për të rifilluar chatin",
+			 captchaTitle: "Na shkruaj",
+			 captchaEnterText: "Shkruaj tekstin e shfaqur",
+			 captchaRefreshButton: "Provo një tekst tjetër",
+			 captchaAudioButton: "Provo audion",
+			 captchaTextButton: "Provo tekstin",
+			 captchaMessageError: "Verifikimi dështoi. Të lutemi, provo përsëri. ",
+			 captchaAccessDenied: "Maksimumi i përjekjeve i tejkaluar",
+			 messagingState_PENDING: "Pezull",
+			 messagingState_SENT: "Dërguar",
+			 messagingState_ACCEPT: "Pranuar",
+			 messagingState_READ: "Lexuar",
+			 messagingState_ERROR: "I pa pranuar",
+			 messagingState_image_ERROR: "Ky skedar nuk u ngarkua. Të lutemi, provo nje skedar tjetër.",
+			 messagingState_image_RETRY: "Ky skedar nuk u ngarkua. Të lutemi, provo përsëri.",
+			 csatLevel_0: "",
+			 csatLevel_1: "Shumë i/e pakënaqur",
+			 csatLevel_2: "I/E pakënaqur",
+			 csatLevel_3: "Neutral",
+			 csatLevel_4: "I/E kënaqur",
+			 csatLevel_5: "Shumë i/e kënaqur",
+			 outOf: "nga",
+			 csatTheAgent: "Agjenti",
+			 csatRatingQuestion: "Si do e vlerësoje bisedën e zhvilluar me agjentin?",
+			 csatDisclaimer: "Vlerësimi yt na ndihmon të përmirësohemi",
+			 cobrowseInvitation: "Po të ftoj për ndarë së bashku ekranin, në mënyrë që të të ndihmoj më mirë. Për të filluar, të lutem, kliko Pranoj.",
+			 cobrowseAcceptBtn: "Pranoj",
+			 cobrowseRejectBtn: "Refuzoj",
+			 cobrowseInvitationHeading: "Ftesë për të ndarë ekranin",
+			 cobrowseSessionStarting: "Duke filluar sesionin e përbashkët...",
+			 cobrowseInvitationRejected: "Ftesa u refuzua",
+			 cobrowseLine_cobrowseAccepted: "Ftesa u pranua",
+			 cobrowseLine_cobrowseDeclined: "Ftesa u refuzua",
+			 cobrowseLine_cobrowseTimeout: "Ftesa e marrë skadoi",
+			 cobrowseLine_cobrowseOffered: "{{agentName}} të ka ftuar në një sesion për të ndarë ekranin",
+			 cobrowseLine_cobrowseCanceled: "Ftesa u anullua nga {{agentName}}",
+			 video_cobrowseInvitation: "Të kam ftuar për një video telefonatë. Të lutem, pranoje.",
+			 video_cobrowseConnecting: "Duke u lidhur",
+			 video_cobrowseConnectingPermission: "Nevojitet akses për kamerën dhe mikrofonin. Të lutemi, prano këto autorizime kur të të shfaqen nga browseri yt.", 
+			 video_cobrowseAcceptBtn: "Prano",
+			 video_cobrowseRejectBtn: "Refuzo",
+			 video_cobrowseInvitationHeading: "Video telefonatë", 
+			 video_cobrowseSessionStarting: "Duke filluar një telefonatë...", 
+			 video_cobrowseInvitationRejected: "Telefonata është refuzuar",
+			 video_cobrowseLine_cobrowseAccepted: "Telefonata u pranua", 
+			 video_cobrowseLine_cobrowseDeclined: "Telefonata u refuzua", 
+			 video_cobrowseLine_cobrowseTimeout: "Humbe një telefonatë nga {{agentName}}", 
+			 video_cobrowseLine_cobrowseOffered: "{{agentName}} të ka telefonuar",
+			 video_cobrowseLine_cobrowseCanceled: "Telefonata u anullua nga {{agentName}}", 
+			 voice_cobrowseInvitation: "Të kam ftuar në një telefonatë me zë. Për të filluar, të lutem kliko Pranoj",  
+			 voice_cobrowseConnecting: "Duke u lidhur", 
+			 voice_cobrowseConnectingPermission: "Nevojitet aksesi i mikrofonit. Të lutemi, prano këtë autorizim kur të të shfaqet nga browseri yt.", 
+			 voice_cobrowseAcceptBtn: "Prano",  
+			 voice_cobrowseRejectBtn: "Refuzo", 
+			 voice_cobrowseInvitationHeading: "Video telefonatë", 
+			 voice_cobrowseSessionStarting: "Duke filluar telefonatën...", 
+			 voice_cobrowseInvitationRejected: "Telefonata është refuzuar", 
+			 voice_cobrowseLine_cobrowseAccepted: "Telefonata u pranua",
+			 voice_cobrowseLine_cobrowseDeclined: "Telefonata u refuzua", 
+			 voice_cobrowseLine_cobrowseTimeout: "Humbe një telefonatë nga {{agentName}}",  
+			 voice_cobrowseLine_cobrowseOffered: "{{agentName}} të ka telefonuar", 
+			 voice_cobrowseLine_cobrowseCanceled: "Telefonata u anullua nga {{agentName}}",
+			 voice_cobrowseActiveCallTooltip: "Ti je në një telefonatë me zë", 
+			 richContentSent: "<< Përmbajte e dërguar >>",
+			 browserNotifications_newMessageTitle: "Mesazh i ri nga {{agentName}}",
+			 browserNotifications_newMessages: "mesazhe të reja",
+			 browserNotifications_richContent: "{{agentName}} ka ndarë përmbajtje me ty",
+			 browserNotifications_image: " {{agentName}} ka ndarë një foto me ty",
+			 browserNotifications_file: "{{agentName}} ka ndarë një skedar me ty", 
+			 ts_Now: "Tani",
+			 ts_Today: "Sot",
+			 ts_Yesterday: "Dje"
           },
           {
             locale: "en-US",
@@ -613,24 +554,43 @@
               var myLoader = document.getElementsByClassName("lp_top-text");
               var myLoaderLength = myLoader.length;
               for (var a = 0; a < myLoaderLength; a++) {
-                myLoader[a].textContent = "Ne ngarkim";
+                myLoader[a].textContent = "Në ngarkim";
               }
 
               // document.getElementsByClassName('lp_rotator')[0].innerHTML = "<img src='https://res.cloudinary.com/djtjkiytu/image/upload/v1585247439/Screenshot_2020-03-26_at_19.25.34.png'>"
               document.getElementsByClassName("lp_rotator")[0].innerHTML = "";
             }
+		  
 
             if (
               typeof mutation.target.className === "string" &&
               mutation.target.className.indexOf("lp_top-text") > -1
             ) {
-              addLanguage();
+		    var myLength = document.getElementsByClassName("lp_top-text").length;
+		    for(var a = 0; a < myLength; a++){
+			    if(document.getElementsByClassName("lp_top-text")[a].innerHTML === "Message us"){
+				    document.getElementsByClassName("lp_top-text")[a].innerHTML = "Na shkruaj" 
+			    }
+			   
+		    }
+		    
+		    addLanguage();
+		    checkAgentName();
             }
 
             if (
               typeof mutation.target.className === "string" &&
               mutation.target.className.indexOf("lp_top_menu") > -1
             ) {
+		    
+		var node = document.getElementsByClassName(
+                  "lp_top_logo_bar"
+                )[0];
+		if(node){
+                	node.parentNode.removeChild(node);
+		}
+		    
+		    
               var mySmallIcon = document.getElementsByClassName(
                 "lp_chatting-with-icon"
               );
@@ -649,16 +609,17 @@
                       "lpc_mobile"
                     ) > -1
                   ) {
-                    jQuery(".lpview_form_textarea").css("width", "320px");
+                    jQuery(".lpview_form_textarea").css("width", "290px");
                   } else {
-                    jQuery(".lpview_form_textarea").css("width", "250px");
+                    jQuery(".lpview_form_textarea").css("width", "220px");
                   }
 
                   clearInterval(refreshIntervalTextBox);
                 }
               }, 100);
             }
-
+		  
+		  /****** commented after the security check to show the attachment icon *************
             if (
               typeof mutation.target.className === "string" &&
               mutation.target.className.indexOf("lp_location_bottom") > -1
@@ -675,15 +636,89 @@
                 jQuery(".lp_input_area").css("left", "10px");
               }
             }
+	    
+	    
+	    *******/
+		  
+
+		  
+		  
           });
         });
 
         observer.observe(document, {
           childList: true,
-          subtree: true,
+          subtree: true
         });
+	      
+	      
+	
+	      
+	      
       }
-      checkElements();
+	
+	function checkAgentName(){
+			
+		var observer = new window.MutationObserver(function (mutations) {
+			
+			mutations.forEach(function (mutation) {
+				
+				// console.log(mutation);
+				
+				if (typeof mutation.target.className === "string") {
+					
+					var myElement = document.getElementsByClassName("lp_lpview_agent_is_typing")[0];
+					
+					if(myElement){
+						console.log(mutation.target.innerHTML);
+						var myName = mutation.target.innerHTML;
+						document.getElementsByClassName("lp_lpview_agent_is_typing")[0].innerHTML = myName + " po shkruan...";
+						if(document.getElementsByClassName("lpMiniIcon").length > 0){
+							if(myName.indexOf("TOBi") > -1){
+								document.getElementsByClassName("lpMiniIcon").src = "https://www.vodafone.al/ext_files/TOBi/Icon_header_agent.jpg";
+							} else{
+								document.getElementsByClassName("lpMiniIcon").src = "https://www.vodafone.al/ext_files/TOBi/Icon_header_chat.jpg";
+							}
+						} else{
+							var div = document.getElementsByClassName("lp_title")[1];
+							div.style.paddingTop='3px';
+							div = document.getElementsByClassName("lp_top-text")[1];
+							div.style.paddingTop='5px';
+							if(myName.indexOf("TOBi") > -1){
+								div.innerHTML = '<img class="lpMiniIcon" style="height:80%;float: left;margin-right: 5px;margin-top: -5px;" src="https://www.vodafone.al/ext_files/TOBi/Icon_header_agent.jpg">' + div.innerHTML;
+							} else{
+								div.innerHTML = '<img class="lpMiniIcon" style="height:80%;float: left;margin-right: 5px;margin-top: -5px;" src="https://www.vodafone.al/ext_files/TOBi/Icon_header_chat.jpg">' + div.innerHTML;
+							}	
+
+						}
+						
+						
+					}
+					
+					
+				
+				}
+				
+				
+			});
+			
+			
+			
+		});
+		
+		
+		var myAgentName = document.querySelector('.lp_top-text');
+		var config = { characterData: true, attributes: true, childList: true, subtree: true };
+		if(myAgentName){
+			observer.observe(myAgentName, config);
+		}
+		
+	}
+	
+	
+	
+	checkElements();
+	
 
 		 
 	 </script>
